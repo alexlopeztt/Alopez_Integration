@@ -6,34 +6,43 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		String myName = "Alex";
-		int myAge = 19;
+		//Variables
+		//String myName = "Alex";
+		//int myAge = 19;
+		
 		//introduction
-		System.out.println("Hello and welcome to this project!");
+		System.out.println("Hello and welcome to my integration project!");
 		
 		//Asks user for name
-		System.out.println("What is your name?");
-		String name = myName; //scan.nextLine();
+		System.out.println("What is your first and last name?");
+		//String name = myName; 
+		String firstName = scan.next();
+		String lastName = scan.next();
+		scan.nextLine();
+		String name = firstName + " " + lastName;
 		
 		//Responds to user's name and says it back
 		System.out.println("Oh, so your name is "
-				+ name  + "? Nice to meet you, " + name + "."); 
+				+ firstName  + "? Nice to meet you, " + firstName + "."); 
 		
 		//Asks user for their age
-		System.out.println("How old are you, " + name 
+		System.out.println("How old are you, " + firstName 
 				+ "? If I may ask?");
-		int age = myAge; //scan.nextInt();
+		//int age = myAge; 
+		int age = scan.nextInt();
+		scan.nextLine();
 		
 		//Responds to the user's age and repeats it back
 		System.out.println("So you are " + age + " years old."
 				+ " How wonderful!");
 		
 		//Asks if the user knows about variables
-		System.out.println("Did you know, " + name + " that a variable is "
+		System.out.println("Did you know, " + firstName + " that a variable is "
 				+ "like a box in memory that holds specific data "
 				+ "depending on what kind of box it is?"); 
 		System.out.println("Yes or no?");
-		String answerYS =  "yes"; //scan.nextLine();
+		//String answerYS =  "yes"; 
+		String answerYS = scan.nextLine();
 		
 		//Sets the user's response to all lower case
 		answerYS = answerYS.toLowerCase();
@@ -70,16 +79,8 @@ public class Main {
 		//char = A data type that can only hold one character (letter or symbol)
 		//boolean = A data type with only two values (true or false)
 		
-		//Prompts user to give first name
-		System.out.println("Could you tell me your first name?");
-		String firstName = "Alex"; //scan.nextLine();
-		
-		//prompts user to give last name
-		System.out.println("Now could you tell me your last name?");
-		String lastName = "Lopez"; //scan.nextLine();
-		
 		//Creates an GetInitials object named userInitials 
-		GetInitails userInitials = new GetInitails();
+		GetIntials userInitials = new GetIntials();
 		
 		//assigns the returned value of the personInitials method to initials
 		//                                 Call             Arguments
@@ -94,28 +95,32 @@ public class Main {
 		//Prompts an integer input from the user
 		System.out.println("Can you enter a number between 1 and 100 that"
 		    + " is a whole number?");
-		int num1 = 5; //scan.nextInt();
+		//int num1 = 5; 
+		int num1 = scan.nextInt();
 		
 		//Asks user for the second number to divide
 		System.out.println("Can you enter another number between 1 and 100 that"
         + " is a whole number?");
-		int num2 = 10; //scan.nextInt();
+		//int num2 = 10; 
+		int num2 = scan.nextInt();
 		
 		//Divides the first number by the second number
 		int intDivision = num1 / num2;
 		
 		//Lets the user know that division took place and the answer of it 
-		System.out.println("Lets divide! The quotent of the two numbers are "
+		System.out.println("Let's divide! The quotient of the two numbers are "
 		    + intDivision);
 		
 		//Asks user if they are confused by integer division
 		System.out.println("Are you confused by the answer?");
 		scan.nextLine();
-		String confusedAnswer = "yes"; //scan.nextLine();
+		
+		//String confusedAnswer = "yes"; 
+		String confusedAnswer = scan.nextLine();
 		confusedAnswer.toLowerCase();
 		
 		//The condition for the later if-else statement
-		int ifCondition;
+		byte ifCondition;
 		
 		//Outputs a response based on user's answer to being confused
 		switch (confusedAnswer) {
@@ -130,7 +135,7 @@ public class Main {
 		    break;
 		    
 		  default:
-		    System.out.println("Well im gonna tell you a story anyways.");
+		    System.out.println("Well I'm gonna tell you a story anyways.");
 		    ifCondition = 1;
 		    break;
 		  
@@ -139,15 +144,15 @@ public class Main {
 		//Gives a response based on what the user previously answered
 		if (ifCondition == 1) {
 		  System.out.println("What happened was integer division."
-		      + " integer division is special because in Java if two"
+		      + " Integer division is special because in Java if two"
 		      + " integers are being divided then the result will ALWAYS"
 		      + " be an integer as well. Which in the case of values that"
 		      + " end up being inbetween two integers then the program"
 		      + " will truncate the number leaving only the number to"
 		      + " the left of the decimal.");
 		} else {
-		  System.out.println("Well im glad to meet a fellow programmer!");
-		  System.out.println("Well let us start on non-integer division.");
+		  System.out.println("Well I'm glad to meet a fellow programmer!");
+		  System.out.println("Well let's start on non-integer division.");
 		}
 		
 		//Prompts the user to enter the different numbers now
@@ -157,14 +162,23 @@ public class Main {
 		
 		//Prompts the user to enter the second number to divide
 		System.out.println("Now, please enter a second whole number.");
-		int divNum2 =scan.nextInt();
+		int divNum2 = scan.nextInt();
 		
-		//division with casting
+		//Division with casting
 		double normDivision = divNum1 / (double) divNum2;
 		
+		//Outputs the answer in a decimal form
 		System.out.println("This is the answer of " + divNum1
 		    + " divided by " + divNum2 + ": " + normDivision);
 		
+		//Explains why we have a decimal number now
+		System.out.println("We were now able to get a decimal answer"
+		    + " because within the code the second integer was treated like"
+		    + " a double through casting!");
+		
+		//Let's the user know that the program has come to an end
+		System.out.println("Well this is the end of this program."
+		    + " Thanks for playing with me. Bye!");
 	}
 
 }

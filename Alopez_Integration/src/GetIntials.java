@@ -1,5 +1,5 @@
 
-public class GetInitails {
+public class GetIntials {
   
   private String firstInitial;
   private String lastInitial;
