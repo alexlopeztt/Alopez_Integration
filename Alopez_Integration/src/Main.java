@@ -107,7 +107,7 @@ public class Main {
 
     // Lets the user know that division took place and the answer of it
     System.out.println(
-        "Let's divide! The quotient of the two numbers are " + intDivision);
+        "Let's divide! The quotient of the two numbers is " + intDivision);
 
     // Asks user if they are confused by integer division
     System.out.println("Are you confused by the answer?");
@@ -145,7 +145,7 @@ public class Main {
           + " Integer division is special because in Java if two"
           + " integers are being divided then the result will ALWAYS"
           + " be an integer as well. Which in the case of values that"
-          + " end up being inbetween two integers then the program"
+          + " end up being in between two integers then the program"
           + " will truncate the number leaving only the number to"
           + " the left of the decimal.");
     } else {
@@ -173,8 +173,8 @@ public class Main {
     System.out.println("We were now able to get a decimal answer"
         + " because within the code the second integer was treated like"
         + " a double through casting!");
-    
-    //Tells the user to enter 4 numbers to have math operations applied to
+
+    // Tells the user to enter 4 numbers to have math operations applied to
     System.out.println("Now let's do something crazy. Please enter four"
         + " different integers between 1 and 100 seperated by a space.");
     int firstNum = scan.nextInt();
@@ -182,28 +182,108 @@ public class Main {
     int thirdNum = scan.nextInt();
     int fourthNum = scan.nextInt();
     scan.nextLine();
-    
-    //Tells the user what operations we will be doing with the numbers
+
+    // Tells the user what operations we will be doing with the numbers
     System.out.println("Now we are going to add the first two numbers,"
         + " the sum being multiplied by the third, the product being"
         + " subtracted by the fourth, and finally the difference will"
         + " be divided by the first number.");
-    
-    //Math calculation
-    double complexMath = (((firstNum + secondNum) * thirdNum) - fourthNum) /
-        (double) firstNum;
-    
-    //Fake loading 
-    System.out.println("Calculation complete. Please hit the enter key to"
-        + " continue.");
+
+    // Math calculation
+    double complexMath = (((firstNum + secondNum) * thirdNum) - fourthNum)
+        / (double) firstNum;
+
+    // Fake loading
+    System.out.println(
+        "Calculation complete. Please hit the enter key to" + " continue.");
     scan.nextLine();
-    
+
     System.out.println("The answer is: " + complexMath);
+
+    // Asks user for their car info
+    System.out.println("What company is your car from?");
+    String make = scan.nextLine();
+    System.out.println("What is your car's top speed?");
+    int topSpeed = scan.nextInt();
+    scan.nextLine();
+
+    // Makes a car object using the a constructor
+    Car userCar = new Car(topSpeed, make);
+    System.out.println("So you drive a " + userCar.getMake()
+        + " and its top speed is " + userCar.getSpeed());
+
+    // do-while loop for the user to hit x to continue the program
+    int keypress;
+    do {
+      System.out.println("Press 5 to continue.");
+      keypress = scan.nextInt();
+      scan.nextLine();
+    } while (keypress != 5);
+
+    // Prompts user to enter a certain amount of numbers
+    System.out.println(
+        "Please enter five different integers seperated" + " by spaces.");
+
+    // Makes an array of integers that holds up to 5 elements
+    int numbers[] = new int[5];
+
+    // A for loop to assign all integers typed in to the different
+    // elements of the numbers array
+    for (int counter = 0; counter < numbers.length; counter++) {
+      numbers[counter] = scan.nextInt();
+      // System.out.println(numbers[counter]);
+    }
+
+    scan.nextLine();
+
+    // Lets the user know what is going to happen next
+    System.out.println("Now lets see what is the smallest number you entered."
+        + " Press enter to continue.");
+    //scan.nextLine();
+
+    int numSum = numbers[0];
+    int largest = numbers[0];
+    int smallest = numbers[0];
+    
+    for (int i = 1; i < numbers.length; i++) {
+      numSum += numbers[i];
+
+      if (numbers[i] > largest) {
+        largest = numbers[i];
+      }
+
+      else if (numbers[i] < smallest) {
+        smallest = numbers[i];
+      } else {
+        System.out.println("Loading");
+      }
+    }
+    
+    //Returns smallest number
+    System.out.println("Done!");
+    System.out.println("The smallest number you entered was... " + smallest);
+    
+    //Returns largest number
+    System.out.println("Now lets see what the biggest number is. Press enter"
+        + " to continue.");
+    scan.nextLine();
+    System.out.println("Loading...");
+    System.out.println("Done!");
+    System.out.println("The biggest number you entered was... " + largest);
+    
+    //Finds the sum of all numbers
+    for(int j = 1; j < numbers.length; j++) {
+      numSum += numbers[j];
+    }
 
     // Let's the user know that the program has come to an end
     System.out.println("Well this is the end of this program."
         + " Thanks for playing with me. Bye!");
+    scan.close();
   }
+  
+    //Returns the sum of all numbers
+    System.out.println();
 
 }
 
