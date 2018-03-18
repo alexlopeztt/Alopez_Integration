@@ -23,6 +23,16 @@ public class Car {
     make = "Unknown";
   }
   
+  public Car(int s) {
+    speed = s;
+    make = "No make found";
+  }
+  
+  public Car(String m) {
+    speed = 0;
+    make = m;
+  }
+  
   public Car(int s, String m) {
     speed = s;
     make = m;

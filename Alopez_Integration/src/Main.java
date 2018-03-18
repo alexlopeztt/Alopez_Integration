@@ -11,7 +11,7 @@ public class Main {
     // int myAge = 19;
 
     // introduction
-    System.out.println("Hello and welcome to my integration project!");
+    /*System.out.println("Hello and welcome to my integration project!");
 
     // Asks user for name
     System.out.println("What is your first and last name?");
@@ -239,7 +239,7 @@ public class Main {
     // Lets the user know what is going to happen next
     System.out.println("Now lets see what is the smallest number you entered."
         + " Press enter to continue.");
-    //scan.nextLine();
+    scan.nextLine();
 
     int numSum = numbers[0];
     int largest = numbers[0];
@@ -267,23 +267,105 @@ public class Main {
     System.out.println("Now lets see what the biggest number is. Press enter"
         + " to continue.");
     scan.nextLine();
+    
     System.out.println("Loading...");
     System.out.println("Done!");
     System.out.println("The biggest number you entered was... " + largest);
+    System.out.println("Alright not lets calculate the sum of all these"
+        + " numbers. Press enter to continue.");
+    scan.nextLine();
     
-    //Finds the sum of all numbers
-    for(int j = 1; j < numbers.length; j++) {
-      numSum += numbers[j];
+    System.out.println("Alright now lets calculate the sum of all these"
+        + " numbers");
+    System.out.println("Loading...");
+    System.out.println("Done!");
+    System.out.println("The total sum of the numbers you entered is"
+        + " " + numSum);
+    
+    //Going prompts user to enter a word
+    System.out.println("Let's try something a little more complicated."
+        + " Please enter your favorite word.");
+    String favWord = scan.nextLine();
+    
+    //Let's the user know what is going to take place
+    System.out.println("Now let's get on with the magic trick.\n"
+        + "Tell me a letter you would like me to search for\n"
+        + "and if it is in your favorite word.\n"
+        //+ "then I will tell\n"
+        //+ "you where the first time that letter occurs in the word.\n"
+        + "If it is not in the word then I will let you know.");
+    
+    //prompts the user to enter a letter
+    System.out.println("Please enter was letter you would like\n"
+        + "me to search.");
+    String letToSearch = scan.nextLine();
+    
+    //fake load time
+    System.out.println("Loading...");
+    
+    //turns both favWord and letToSearch into all lower case
+    favWord = favWord.toLowerCase();
+    letToSearch = letToSearch.toLowerCase();
+    //System.out.println(favWord + " " + letToSearch);
+    //scan.nextLine();
+    
+    //converts both favWord and letToSearch into arrays or chars
+    char[] favChars = favWord.toCharArray();
+    char[] charToSearch = letToSearch.toCharArray();
+    
+    //Loop to search through the favChars array to check if the 
+    //charToSearch is in the favChars array
+    boolean found = false;
+    int index = 0;
+    while(found == false && index < favChars.length) {
+      if(favChars[index] == charToSearch[0]) {
+        //int placeOfChar = indexOf(charToSearch[0], 0);
+        System.out.println("I have found a(n) " + letToSearch + ".");
+        //System.out.println("It was at position " + placeOfChar + "." );
+        found = true;
+      } else {
+        System.out.println("Loading...");
+        index++;
+      }
+      
     }
-
+    
+    if(found == false) {
+      System.out.println("Your letter was not found in your word.");
+    }
+    */
+    
+    System.out.println("Press enter to continue");
+    scan.nextLine();
+    
+    //Prompts user to what is going to happen
+    System.out.println("Now we are gonna do a little bit of math.\n"
+        + "I will give you the product of the following 5 numbers...");
+    
+    //Does a for-each loop to print out all numbers in the arr array 
+    int[] arr = {1, 2, 3, 4, 5};
+    for(int loop : arr) {
+      System.out.print(loop + " ");
+    }
+    
+    System.out.println("\nNow to multiply them togther.\n"
+        + "Press enter to continue");
+    scan.nextLine();
+    
+    //Calculates the total product
+    int numProduct = arr[0];
+    for(int k = 1; k < arr.length; k++) {
+      numProduct *= arr[k];
+    }
+    System.out.println("Loading...\nDone!");
+    System.out.println("The total product is " + numProduct + ".");
+    
     // Let's the user know that the program has come to an end
     System.out.println("Well this is the end of this program."
         + " Thanks for playing with me. Bye!");
     scan.close();
   }
-  
-    //Returns the sum of all numbers
-    System.out.println();
+ 
 
 }
 
