@@ -3,7 +3,7 @@ public class Car {
 
   private int topSpeed;
   private String make;
-  static private int currentSpeed;
+  private int currentSpeed;
 
   public Car() {
     topSpeed = 0;
@@ -51,15 +51,15 @@ public class Car {
     return make;
   }
   
-  static public void setCurrentSpeed(int c) {
+  public void setCurrentSpeed(int c) {
     currentSpeed = c;
   }
   
-  static public int getCurrentSpeed() {
+  public int getCurrentSpeed() {
     return currentSpeed;
   }
 
-  static public void applyBrake() {
+  public void applyBrake() {
     currentSpeed--;
   }
 
