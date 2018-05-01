@@ -5,18 +5,20 @@ import java.util.Scanner;
 //This is my project that integrates all the skills I have learned
 public class Main {
 
+  /**
+   * This is the main method for the program.
+   * @param args The argument for the main class.
+   */
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
 
-//    // introduction
+    // introduction
     System.out.println("Hello and welcome to my integration project!");
 
     // Asks user for name
     System.out.println("What is your first and last name?");
-    String firstName = "Alex";
-    // scan.next();
-    String lastName = "Lopez";
-    // scan.next();
+    String firstName = scan.next();
+    String lastName = scan.next();
     scan.nextLine();
     String name = firstName + " " + lastName;
 
@@ -26,8 +28,7 @@ public class Main {
 
     // Asks user for their age
     System.out.println("How old are you, " + firstName + "?\nIf I may ask?");
-    int age = 19;
-    // NumberInput.getGoodInt(scan);
+    int age = NumberInput.getGoodInt(scan);
     scan.nextLine();
 
     // Responds to the user's age and repeats it back
@@ -38,14 +39,13 @@ public class Main {
         + "\nlike a box in memory that holds specific data"
         + "\ndepending on what kind of box it is?");
     System.out.println("Yes or no?");
-    String answerYS = "yes";
-    // StringInput.getGoodString(scan);
+    String answerYs = StringInput.getGoodString(scan);
 
     // Sets the user's response to all lower case
-    answerYS = answerYS.toLowerCase();
+    answerYs = answerYs.toLowerCase();
 
     // A switch statement to determine outcome based on user response
-    switch (answerYS) {
+    switch (answerYs) {
       case "yes":
         System.out.println("Oh. That's great then!");
         break;
@@ -92,14 +92,12 @@ public class Main {
     // Prompts an integer input from the user
     System.out.println("Can you enter a number between 1 and 100 that"
         + " is a whole number?");
-    int num1 = 5;
-    // NumberInput.getGoodInt(scan);
+    int num1 = NumberInput.getGoodInt(scan);
 
     // Asks user for the second number to divide
     System.out.println("Can you enter another number between 1 and 100 that"
         + " is a whole number?");
-    int num2 = 10;
-    // NumberInput.getGoodInt(scan);
+    int num2 = NumberInput.getGoodInt(scan);
 
     // Divides the first number by the second number
     int intDivision = num1 / num2;
@@ -112,8 +110,7 @@ public class Main {
     System.out.println("Are you confused by the answer?");
     scan.nextLine();
 
-    String confusedAnswer = "yes";
-    // String confusedAnswer = StringInput.getGoodString(scan);
+    String confusedAnswer = StringInput.getGoodString(scan);
     confusedAnswer = confusedAnswer.toLowerCase();
 
     // The condition for the later if-else statement
@@ -155,13 +152,11 @@ public class Main {
     // Prompts the user to enter the different numbers now
     System.out.println("Alright, let us try some normal division."
         + "\nPlease enter a new whole number between 1-100.");
-    // int divNum1 = NumberInput.getGoodInt(scan);
-    int divNum1 = 2;
+    int divNum1 = NumberInput.getGoodInt(scan);
 
     // Prompts the user to enter the second number to divide
     System.out.println("Now, please enter a second whole number.");
-    // int divNum2 = NumberInput.getGoodInt(scan);
-    int divNum2 = 4;
+    int divNum2 = NumberInput.getGoodInt(scan);
 
     // Division with casting
     double normDivision = divNum1 / (double) divNum2;
@@ -178,14 +173,10 @@ public class Main {
     // Tells the user to enter 4 numbers to have math operations applied to
     System.out.println("Now let's do something crazy. Please enter four"
         + " different integers between 1 and 100 separated by a space.");
-    // int firstNum = NumberInput.getGoodInt(scan);
-    int firstNum = 2;
-    // int secondNum = NumberInput.getGoodInt(scan);
-    int secondNum = 4;
-    // int thirdNum = NumberInput.getGoodInt(scan);
-    int thirdNum = 6;
-    // int fourthNum = NumberInput.getGoodInt(scan);
-    int fourthNum = 8;
+    int firstNum = NumberInput.getGoodInt(scan);
+    int secondNum = NumberInput.getGoodInt(scan);
+    int thirdNum = NumberInput.getGoodInt(scan);
+    int fourthNum = NumberInput.getGoodInt(scan);
     scan.nextLine();
 
     // Tells the user what operations we will be doing with the numbers
@@ -207,11 +198,9 @@ public class Main {
 
     // Asks user for their car info
     System.out.println("What company is your car from?");
-    String make = "Ford";
-    // StringInput.getGoodString(scan);
+    String make = StringInput.getGoodString(scan);
     System.out.println("What is your car's top speed?");
-    int topSpeed = 120;
-    // NumberInput.getGoodInt(scan);
+    int topSpeed = NumberInput.getGoodInt(scan);
     scan.nextLine();
 
     // Makes a car object using the a constructor
@@ -223,8 +212,7 @@ public class Main {
     int keypress;
     do {
       System.out.println("Press 5 to continue.");
-      keypress = 5;
-      // NumberInput.getGoodInt(scan);
+      keypress = NumberInput.getGoodInt(scan);
       scan.nextLine();
     } while (keypress != 5);
 
@@ -233,14 +221,12 @@ public class Main {
         "Please enter five different integers separated" + " by spaces.");
 
     // Makes an array of integers that holds up to 5 elements
-    int numbers[] = { 1, 2, 3, 4, 5 };
-    // new int[5];
+    int[] numbers = new int[5];
 
     // A for loop to assign all integers typed in, to the different
     // elements of the numbers array
     for (int counter = 0; counter < numbers.length; counter++) {
-      // numbers[counter] = NumberInput.getGoodInt(scan);;
-      // System.out.println(numbers[counter]);
+      numbers[counter] = NumberInput.getGoodInt(scan);;
     }
 
     scan.nextLine();
@@ -289,8 +275,11 @@ public class Main {
     // Going prompts user to enter a word
     System.out.println("Let's try something a little more complicated."
         + "\nPlease enter your favorite word.");
-    String favWord = "Foala";
-    // StringInput.getGoodString(scan);
+    
+    String favWord = StringInput.getGoodString(scan);
+    
+    //Makes favWord all lower case.
+    favWord = favWord.toLowerCase();
 
     // Let's the user know what is going to take place
     System.out.println("Now let's get on with the magic trick.\n"
@@ -301,17 +290,13 @@ public class Main {
     // prompts the user to enter a letter
     System.out
         .println("Please enter was letter you would like\n" + "me to search.");
-    String letToSearch = "o";
-    // StringInput.getGoodString(scan);
+    String letToSearch = StringInput.getGoodString(scan);
 
     // fake load time
     System.out.println("Loading...");
 
-    // turns both favWord and letToSearch into all lower case
-    favWord = favWord.toLowerCase();
+    // turns letToSearch into all lower case
     letToSearch = letToSearch.toLowerCase();
-    // System.out.println(favWord + " " + letToSearch);
-    // scan.nextLine();
 
     // converts both favWord and letToSearch into arrays of chars
     char[] favChars = favWord.toCharArray();
@@ -358,7 +343,7 @@ public class Main {
     // Calculates the total product
     int numProduct = arr[0];
     for (int k = 1; k < arr.length; k++) {
-      numProduct = arr[k];
+      numProduct = arr[k] * numProduct;
     }
     System.out.println("Loading...\nDone!");
     System.out.println("The total product is " + numProduct + ".");
@@ -376,14 +361,12 @@ public class Main {
 
     // Evaluates the users choice
     System.out.println("Yes or no?");
-    String choice = "yes";
-    // StringInput.getGoodString(scan);
+    String choice = StringInput.getGoodString(scan);
     int newSpeed;
     choice = choice.toLowerCase();
     if (choice.equals("yes")) {
       System.out.println("Enter what speed you would like to go");
-      newSpeed = 70;
-      // NumberInput.getGoodInt(scan);
+      newSpeed = NumberInput.getGoodInt(scan);
       userCar.setCurrentSpeed(newSpeed);
       System.out.println("OK. You are now going " + userCar.getCurrentSpeed()
           + "mph. Now lets see if you evade the cops..." + "\nLoading...");
@@ -410,8 +393,7 @@ public class Main {
     // Reversing a given input of the user
     System.out.println(
         "Its time for more magic. " + "\nPlease enter a short phrase.");
-    String phrase = "I can do the cancan";
-    // StringInput.getGoodString(scan);
+    String phrase = StringInput.getGoodString(scan);
     StringBuilder reverse = new StringBuilder(phrase);
     System.out.println("Here is your phrase backwards: " + reverse.reverse());
 
@@ -420,11 +402,9 @@ public class Main {
 
     // Exercise in the .append() method
     System.out.println("Please enter an adjective...");
-    String adj = "Blue";
-    // StringInput.getGoodString(scan);
+    String adj = StringInput.getGoodString(scan);
     System.out.println("Please enter a noun...");
-    String noun = "Horse";
-    // StringInput.getGoodString(scan);
+    String noun = StringInput.getGoodString(scan);
     System.out.println("Loading...");
     StringBuilder sbAdj = new StringBuilder(adj);
     System.out.println("Here is the result: " + sbAdj.append(" " + noun));
@@ -434,8 +414,7 @@ public class Main {
 
     // Using the .deleteCharAt() method
     System.out.println("Please enter a word");
-    String word = "word";
-    // StringInput.getGoodString(scan);
+    String word = StringInput.getGoodString(scan);
     
     StringBuilder newWord = new StringBuilder(word);
     boolean pass = false;
@@ -443,8 +422,7 @@ public class Main {
       try {
         System.out.println("Now enter an integer between 0 and " 
             + (word.length() - 1));
-        int charPlace = 2;
-        // NumberInput.getGoodInt(scan);
+        int charPlace = NumberInput.getGoodInt(scan);
         scan.nextLine();
         System.out.println("Loading...");
         newWord = newWord.deleteCharAt(charPlace);
@@ -456,13 +434,6 @@ public class Main {
     } while (pass == false);
     System.out.println("Here is your new word: " + newWord);
 
-    // Creates objects of Animal, Dog, and Cat
-    Animal myAnimal = new Animal();
-    Dog myDog = new Dog();
-    Cat myCat = new Cat();
-
-    // Puts the three objects above into an array of type Animal
-    Animal[] animals = { myAnimal, myDog, myCat };
 
     // Assigning values to the different fields
     System.out.println("So now imagine yourself as a great person who"
@@ -470,6 +441,9 @@ public class Main {
         + "\nthat you dont know.");
     System.out.println("Press enter to go through your dog's info.");
     scan.nextLine();
+    
+    // Creates a Dog object
+    Dog myDog = new Dog();
 
     // Dog values
     System.out.println("What is the dog's breed?");
@@ -480,12 +454,15 @@ public class Main {
     int dogAge = NumberInput.getGoodInt(scan);
     myDog.setAge(dogAge);
 
-//    System.out.println("What is the dog's name?");
-//    String dogName = StringInput.getGoodString(scan);
-//    myDog.setName(dogName);
+    //System.out.println("What is the dog's name?");
+    //String dogName = StringInput.getGoodString(scan);
+    //myDog.setName(dogName);
     
     System.out.println("Now to the cat. Press enter to continue.");
     scan.nextLine();
+    
+    //Creates a Cat object 
+    Cat myCat = new Cat();
 
     // Cat values
     System.out.println("What is the cat's breed?");
@@ -496,9 +473,12 @@ public class Main {
     int catAge = NumberInput.getGoodInt(scan);
     myCat.setAge(catAge);
 
-//    System.out.println("What is the cat's name?");
-//    String catName = StringInput.getGoodString(scan);
-//    myCat.setName(catName);
+    //System.out.println("What is the cat's name?");
+    //String catName = StringInput.getGoodString(scan);
+    //myCat.setName(catName);
+    
+    //Creates an Animal object.
+    Animal myAnimal = new Animal();
 
     // Animal Values
     System.out.println("Well...you don't know what kind of creature the last"
@@ -506,6 +486,9 @@ public class Main {
         + "\ndid you name it?");
     String animalName = StringInput.getGoodString(scan);
     myAnimal.setName(animalName);
+    
+    // Puts the three objects above into an array of type Animal
+    Animal[] animals = { myAnimal, myDog, myCat };
 
     // Iterating through the animals array
     System.out.println("So lets recap the information about your animals.");
@@ -533,9 +516,10 @@ public class Main {
         + " Thanks for playing with me. Bye!");
     scan.close();
   }
-    private static int operate(int number, int number2, MathOperation matOp) {
-      return matOp.operation(number, number2);
-    }
+
+  private static int operate(int number, int number2, MathOperation matOp) {
+    return matOp.operation(number, number2);
+  }
 
 
 
